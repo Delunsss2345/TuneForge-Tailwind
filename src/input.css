@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  img {
+    @apply object-cover;
+  }
+}
+
+@layer components {
+  .components {
+    @apply p-4 sm:p-8 md:p-12 lg:p-16;
+  }
+  .before {
+    @apply before:absolute before:content-[''];
+  }
+
+  .after {
+    @apply after:absolute after:content-[''];
+  }
+  .nav.open {
+    @apply scale-y-100 origin-top;
+  }
+  .hamburger.close {
+    div:first-child {
+      @apply rotate-45 translate-y-2;
+    }
+    div:nth-child(2) {
+      @apply opacity-0;
+    }
+    div:last-child {
+      @apply -rotate-45 -translate-y-2;
+    }
+  }
+  .play-list {
+    @apply grid grid-cols-[min-content,1fr] grid-rows-2 gap-x-2 md:gap-x-4;
+  }
+  .item-discography {
+    div:first-child {
+      @apply flex flex-col gap-2;
+      h6 {
+        @apply font-bold text-3xl text-golden;
+      }
+      a {
+        @apply text-white text-xl space-x-1;
+        i {
+          @apply text-sm h-full transition-transform text-golden;
+        }
+      }
+    }
+    ul {
+      @apply flex gap-x-2;
+      li {
+        @apply flex items-center justify-center size-8 text-white border border-white hover:text-golden  transition-colors;
+      }
+    }
+  }
+  .member {
+    @apply bg-golden pl-4;
+    div:last-child {
+      @apply p-4 bg-golden space-y-1;
+      h6 {
+        @apply font-semibold text-black text-xl uppercase;
+      }
+      p {
+        @apply font-medium text-white text-lg;
+      }
+    }
+  }
+  .tour {
+    @apply p-4 sm:p-6;
+    div {
+      h6 {
+        @apply text-golden text-sm sm:text-lg;
+      }
+    }
+    p:first-child {
+      @apply text-white font-semibold text-lg sm:text-xl;
+    }
+
+    div:last-child {
+      @apply flex flex-col gap-2 sm:flex-row-reverse sm:items-center;
+      a {
+        @apply px-3 py-1 border border-golden sm:border-2 sm:border-white;
+      }
+    }
+  }
+  .footer-list {
+    @apply grid sm:grid-cols-3 gap-y-4 gap-x-8 sm:justify-between *:flex *:flex-col
+     *:items-center *:p-4 *:text-white *:border *:border-golden *:backdrop-blur-md;
+    div {
+      @apply gap-y-2 bg-transparent;
+      h3 {
+        @apply font-bold text-lg sm:text-xl;
+      }
+      h5 {
+        @apply text-lg sm:text-xl uppercase;
+      }
+      p {
+        @apply underline decoration-golden decoration-2;
+      }
+    }
+  }
+}
